@@ -10,6 +10,7 @@ body {
   header {
     background-color: #006064; /* Kolor nagłówka */
     padding: 10px;
+    text-align: center; /* Center the header content */
   }
   
   nav ul {
@@ -101,36 +102,61 @@ body {
     border-radius: 5px;
   }
   
-  /* Galeria */
+/* Galeria */
 .gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Min width 250px, reszta przestrzeni wypełniona */
-    gap: 20px; /* Odstęp między elementami */
-    margin: 20px 0;
-  }
-  
-  .gallery-grid figure {
-    margin: 0;
-  }
-  
-  .gallery-grid img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  figure figcaption {
-    text-align: center;
-    font-size: 0.9em;
-    margin-top: 5px;
-    color: #555;
-  }
-  
-  video {
-    display: block;
-    margin: 20px auto;
-    max-width: 100%;
-  }
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increase min width to 300px for larger photos */
+  gap: 30px; /* Increase gap for more spacing between photos */
+  margin: 30px 0;
+}
+
+.gallery-grid figure {
+  margin: 0;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px; /* Optional: rounded corners */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Optional: shadow for depth */
+  transition: transform 0.3s ease; /* Smooth scaling on hover */
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.05); /* Slightly enlarge image on hover */
+}
+
+figure figcaption {
+  text-align: center;
+  font-size: 1em;
+  margin-top: 10px;
+  color: #333;
+  font-weight: 600;
+}
+
+/* Style for the video in the gallery 
+.gallery-grid video {
+  display: block;
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  margin-top: 30px;
+}*/
+
+/* Responsive Video Container */
+.video-container {
+  display: flex;
+  justify-content: center; /* Center the video */
+  margin: 30px 0;
+}
+
+.video-container video {
+  width: 100%;
+  max-width: 800px; /* Set max-width for responsiveness */
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
 /*Clock*/
 .clock-container {
     display: flex;            /* Use Flexbox to center content */
